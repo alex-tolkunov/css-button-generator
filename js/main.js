@@ -1,28 +1,73 @@
 $(function() {
-    $( "#slider-range-max" ).slider({
-      range: "max",
-      min: 0,
-      max: 20,
-      value: 0,
-      slide: function( event, ui ) {
-        $( "#amount" ).val( ui.value );
-      }
-    });
-    $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
+    $( "#slider-border-radius" ).slider(
+        {
+            min: 0,
+            max: 20,
+            range: 'min',
+            change: setInputsFromSlider,
+            slide: setInputsFromSlider,
+            stop: setInputsFromSlider
+        },
+        'value'
+      );
+
+        var btnBorderRadius = document.getElementsByClassName('result-button');
+        style = btnBorderRadius[0].style;
+
+    function setInputsFromSlider (event, ui) {
+        var val = $('#slider-border-radius').slider('value');
+            style.borderRadius = val + 'px';
+            style.webkitBorderRadius = val + 'px';
+            style.mozBorderRadius = val + 'px';
+    }
   });
 
+   
+
+/* ------------------------------------- */
+
 $(function() {
-    $( "#slider-range-max1" ).slider({
-      range: "max",
-      min: 0,
-      max: 20,
-      value: 0,
-      slide: function( event, ui ) {
-        $( "#amount1" ).val( ui.value );
-      }
-    });
-    $( "#amount1" ).val( $( "#slider-range-max1" ).slider( "value" ) );
+    $( "#slider-border-size" ).slider(
+        {
+            min: 0,
+            max: 6,
+            range: 'min',
+            change: setInputsFromSlider,
+            slide: setInputsFromSlider,
+            stop: setInputsFromSlider
+        },
+        'value'
+      );
+
+    var btnBorderWidth = document.getElementsByClassName('result-button');
+        style = btnBorderWidth[0].style;
+
+    function setInputsFromSlider (event, ui) {
+        var val = $('#slider-border-size').slider('value');
+            style.borderWidth = val + 'px';
+    }
+
+    
   });
+
+(function (){
+      var create = $ ('.result-button'),
+      bgColorInput = $ ('#bg-color');
+     
+
+
+      bgColorInput.on('change' , function (){
+          var newColor = '#' + $(this).val();
+          create.css({
+            'background-color':  newColor 
+          });
+
+          console.log(newColor)
+      });
+
+
+}());
+
 
 
 

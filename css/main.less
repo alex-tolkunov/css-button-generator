@@ -1,90 +1,34 @@
-/* --------- Colors --------- */
-
-
-
 /* --------- Fonts --------- */
 
 @font-face {
-    font-family: "MyriadPro-Bold";
-    src: url("../fonts/myriadpro/MyriadPro-Bold.eot");
-    src: url("../fonts/myriadpro/MyriadPro-Bold.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/myriadpro/MyriadPro-Bold.woff") format("woff"),
-         url("../fonts/myriadpro/MyriadPro-Bold.ttf") format("truetype"),
-         url("../fonts/myriadpro/MyriadPro-Bold.svg#MyriadPro-Bold") format("svg");
+    font-family: "fregatregular";
+    src: url("../fonts/fregat/fregat_regular.eot");
+    src: url("../fonts/fregat/fregat_regular.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/fregat/fregat_regular.woff") format("woff"),
+         url("../fonts/fregat/fregat_regular.ttf") format("truetype"),
+         url("../fonts/fregat/fregat_regular.svg#MyriadPro-Bold") format("svg");
 }
 
 @font-face {
-    font-family: "MyriadPro-BoldCond";
-    src: url("../fonts/myriadpro/MyriadPro-BoldCond.eot");
-    src: url("../fonts/myriadpro/MyriadPro-BoldCond.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/myriadpro/MyriadPro-BoldCond.woff") format("woff"),
-         url("../fonts/myriadpro/MyriadPro-BoldCond.ttf") format("truetype"),
-         url("../fonts/myriadpro/MyriadPro-BoldCond.svg#MyriadPro-BoldCond") format("svg");
+    font-family: "fregatbold";
+    src: url("../fonts/fregat/fregat_bold.eot");
+    src: url("../fonts/fregat/fregat_bold.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/fregat/fregat_bold.woff") format("woff"),
+         url("../fonts/fregat/fregat_bold.ttf") format("truetype"),
+         url("../fonts/fregat/fregat_bold.svg#MyriadPro-BoldCond") format("svg");
 }
 
-@font-face {
-    font-family: "MyriadPro-Cond";
-    src: url("../fonts/myriadpro/MyriadPro-Cond.eot");
-    src: url("../fonts/myriadpro/MyriadPro-Cond.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/myriadpro/MyriadPro-Cond.woff") format("woff"),
-         url("../fonts/myriadpro/MyriadPro-Cond.ttf") format("truetype"),
-         url("../fonts/myriadpro/MyriadPro-Cond.svg#MyriadPro-Cond") format("svg");
+.fregat-b {
+    font-family: "fregatbold";
 }
 
-@font-face {
-    font-family: "MyriadPro-It";
-    src: url("../fonts/myriadpro/MyriadPro-It.eot");
-    src: url("../fonts/myriadpro/MyriadPro-It.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/myriadpro/MyriadPro-It.woff") format("woff"),
-         url("../fonts/myriadpro/MyriadPro-It.ttf") format("truetype"),
-         url("../fonts/myriadpro/MyriadPro-It.svg#MyriadPro-It") format("svg");
-}
-
-@font-face {
-    font-family: "MyriadPro-Regular";
-    src: url("../fonts/myriadpro/MyriadPro-Regular.eot");
-    src: url("../fonts/myriadpro/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/myriadpro/MyriadPro-Regular.woff") format("woff"),
-         url("../fonts/myriadpro/MyriadPro-Regular.ttf") format("truetype"),
-         url("../fonts/myriadpro/MyriadPro-Regular.svg#MyriadPro-Regular") format("svg");
-}
-
-@font-face {
-    font-family: "MyriadPro-Semibold";
-    src: url("../fonts/myriadpro/MyriadPro-Semibold.eot");
-    src: url("../fonts/myriadpro/MyriadPro-Semibold.eot?#iefix") format("embedded-opentype"),
-         url("../fonts/myriadpro/MyriadPro-Semibold.woff") format("woff"),
-         url("../fonts/myriadpro/MyriadPro-Semibold.ttf") format("truetype"),
-         url("../fonts/myriadpro/MyriadPro-Semibold.svg#MyriadPro-Semibold") format("svg");
-}
-
-.myriad-b {
-    font-family: "MyriadPro-Bold";
-}
-
-.myriad-bc {
-    font-family: "MyriadPro-BoldCond";
-}
-
-.myriad-c {
-    font-family: "MyriadPro-Cond";
-}
-
-.myriad-it {
-    font-family: "MyriadPro-It";
-}
-
-.myriad-r {
-    font-family: "MyriadPro-Regular";
-}
-
-.myriad-sb {
-    font-family: "MyriadPro-Semibold";
+.fregat-r {
+    font-family: "fregatregular";
 }
 
 /* --------- Mixins --------- */
 
-
+  @import "mixins";
 
 /* --------- Base --------- */
 * {
@@ -94,7 +38,7 @@
 }
 
 body {
-    font: 100%/1.5em Arial,Helvetica, sans-serif;
+    font: 100%/1.5em "fregatregular";
     color: #000;
     -webkit-font-smoothing: antialiased;
     background-color: #cccccc;
@@ -104,14 +48,8 @@ img {
     max-width: 100%;
     height: auto;
 }
- 
-  
- 
-h1 {
-    color:blue;
-}
-  
- 
+
+/* --------- Main --------- */
  
 .container {
     
@@ -127,27 +65,28 @@ h1 {
     padding: 0 1em; 
     text-align: center;
     
+}
+
+.button {
+    width: 150px;
+    height: 50px;
+    border: none;
+    background-color: #46a5e8;
+    color: white;
+
+    &:hover {
+        background-color:#2c8acc;
+        .transition(2s);
+    }
 } 
- 
-.create {
-    height: 40px;
-    width: 140px;
-    background: #ccc;
-    border: 1px solid #777;
-    border-radius: 1px;
-    margin: 100px auto;
+
+textarea {
+    width: 50%;
+    height:90% ;
+    resize: none;
+    outline: none;
 }
 
-#slider-range-max {
-    width:50%;
-    margin: 0 auto;
-}
-
-#slider-range-max1 {
-    width:50%;
-    margin: 0 auto;
-}
- 
 .container:before,
 .container:after,
 .row:after,
@@ -177,16 +116,9 @@ h1 {
 .container .cols.col-11,
 .container .cols.col-12  { width: 100%; } 
 
-#amount,
-#amount1 {
-    border:0; 
-    color:#00000; 
-    font-weight:bold;
-}
 
-.br {
-    text-align: center;
-}
+
+/* --------- input color --------- */
 
 #bg-color  {
     width: 60px;
@@ -196,11 +128,33 @@ h1 {
     width: 60px;
 }
 
+/* --------- Button create --------- */
+
+.result-button {
+  margin: 100px auto;
+  height: 40px;
+  width: 140px;
+  border: 0px solid #000;
+}
+
+
+
+/* --------- UI slider --------- */
+
+#slider-border-radius,
+#slider-border-size
+ {
+    width:50%;
+    margin: 0 auto;
+}
+
+
+
+
+/* --------- Media --------- */
 
 @media only screen and (min-width: 685px) {  
-    h1 {
-        color:#000;
-    }
+    
  
     .container .cols.col-1   { width: 8.333333333333332%;  }
     .container .cols.col-2   { width: 16.666666667%;  }
@@ -215,9 +169,6 @@ h1 {
     .container .cols.col-11  { width: 91,666666667%; }
     .container .cols.col-12  { width: 100%;    } 
  
-    body:after {
-        content: "больше или равно 321px";
-        background-color: red;
-    }
+    
  
 }

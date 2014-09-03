@@ -852,7 +852,7 @@ body .ui-tooltip {
 .ui-widget-content {
 	border: 1px solid #dddddd;
 /*	background: #eeeeee url("../img/jqui/images/ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top repeat-x;*/
-    /*  изменен фон слайдера справа */
+    /*изменен фон слайдера справа */
     background: #308ecf;
 	color: #333333;
 }
@@ -860,10 +860,10 @@ body .ui-tooltip {
 	color: #333333;
 }
 .ui-widget-header {
-	border: 1px solid #e78f08;
+		border: 1px solid #e78f08;
 	/*background: #f6a828 url("../img/jqui/images/ui-bg_gloss-wave_35_f6a828_500x100.png") 50% 50% repeat-x;*/
     /* изменен фон слайдера слева */
-    background: #828282;
+    background: #828282 50% 50% repeat-x;
 	color: #ffffff;
 	font-weight: bold;
 }
@@ -880,7 +880,7 @@ body .ui-tooltip {
 /*	background: #000000 *//*#f6f6f6 url("../img/jqui/images/ui-bg_glass_100_f6f6f6_1x400.png")*//* 50% 50% repeat-x;*/
     /*  изменена ручка ползунка*/
 	border: none;
-    background: /*#ffffff*/ url("../img/jqui/handle.png") round;
+    background: /*#ffffff*/ url("img/jqui/handle.png") round;
     font-weight: bold;
 	color: #1c94c4;
 }
@@ -900,7 +900,7 @@ body .ui-tooltip {
 	background: #000000 *//*#fdf5ce url("../img/jqui/images/ui-bg_glass_100_fdf5ce_1x400.png")*//* 50% 50% repeat-x;*/
     /*  изменена ручка ползунка*/
 	border: none;
-    background: /*#ffffff*/ url("../img/jqui/handle.png") round;
+    background: /*#ffffff*/ url("img/jqui/handle.png") round;
     font-weight: bold;
 	color: #c77405;
 }
@@ -922,7 +922,7 @@ body .ui-tooltip {
 	background: #000000 *//*#ffffff*//* *//*url("../img/jqui/images/ui-bg_glass_65_ffffff_1x400.png")*//* 50% 50% repeat-x;*/
     /*изменена ручка ползунка*/
 	border: none;
-    background: /*#ffffff*/ url("../img/jqui/handle.png") round;
+    background: /*#ffffff*/ url("img/jqui/handle.png") round;
 	font-weight: bold;
 	color: #eb8f00;
 }
