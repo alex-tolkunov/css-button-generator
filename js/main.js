@@ -53,7 +53,8 @@ $(function() {
 (function (){
       var create = $ ('.result-button'),
       bgColorInput = $ ('#bg-color'),
-      brColorInput = $ ('#border-color');
+      brColorInput = $ ('#border-color'),
+      btnText = $ ('#btn-text');
      
 
 
@@ -71,9 +72,14 @@ $(function() {
           create.css({
             'border-color':  newColor 
           });
-            
+
           
       });
+
+      
+
+      
+          
 
 
 }());
@@ -81,4 +87,10 @@ $(function() {
 
 
 
-   
+   $(document).ready ( function(){
+ 
+$(".btn").keyup(function() {
+         $('#button').text($(".btn").val());
+});
+ 
+});
