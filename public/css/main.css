@@ -1,0 +1,185 @@
+/* --------- Colors --------- */
+/* --------- Fonts --------- */
+@font-face {
+  font-family: "MyriadPro-Bold";
+  src: url("../fonts/myriadpro/MyriadPro-Bold.eot");
+  src: url("../fonts/myriadpro/MyriadPro-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/myriadpro/MyriadPro-Bold.woff") format("woff"), url("../fonts/myriadpro/MyriadPro-Bold.ttf") format("truetype"), url("../fonts/myriadpro/MyriadPro-Bold.svg#MyriadPro-Bold") format("svg");
+}
+@font-face {
+  font-family: "MyriadPro-BoldCond";
+  src: url("../fonts/myriadpro/MyriadPro-BoldCond.eot");
+  src: url("../fonts/myriadpro/MyriadPro-BoldCond.eot?#iefix") format("embedded-opentype"), url("../fonts/myriadpro/MyriadPro-BoldCond.woff") format("woff"), url("../fonts/myriadpro/MyriadPro-BoldCond.ttf") format("truetype"), url("../fonts/myriadpro/MyriadPro-BoldCond.svg#MyriadPro-BoldCond") format("svg");
+}
+@font-face {
+  font-family: "MyriadPro-Cond";
+  src: url("../fonts/myriadpro/MyriadPro-Cond.eot");
+  src: url("../fonts/myriadpro/MyriadPro-Cond.eot?#iefix") format("embedded-opentype"), url("../fonts/myriadpro/MyriadPro-Cond.woff") format("woff"), url("../fonts/myriadpro/MyriadPro-Cond.ttf") format("truetype"), url("../fonts/myriadpro/MyriadPro-Cond.svg#MyriadPro-Cond") format("svg");
+}
+@font-face {
+  font-family: "MyriadPro-It";
+  src: url("../fonts/myriadpro/MyriadPro-It.eot");
+  src: url("../fonts/myriadpro/MyriadPro-It.eot?#iefix") format("embedded-opentype"), url("../fonts/myriadpro/MyriadPro-It.woff") format("woff"), url("../fonts/myriadpro/MyriadPro-It.ttf") format("truetype"), url("../fonts/myriadpro/MyriadPro-It.svg#MyriadPro-It") format("svg");
+}
+@font-face {
+  font-family: "MyriadPro-Regular";
+  src: url("../fonts/myriadpro/MyriadPro-Regular.eot");
+  src: url("../fonts/myriadpro/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/myriadpro/MyriadPro-Regular.woff") format("woff"), url("../fonts/myriadpro/MyriadPro-Regular.ttf") format("truetype"), url("../fonts/myriadpro/MyriadPro-Regular.svg#MyriadPro-Regular") format("svg");
+}
+@font-face {
+  font-family: "MyriadPro-Semibold";
+  src: url("../fonts/myriadpro/MyriadPro-Semibold.eot");
+  src: url("../fonts/myriadpro/MyriadPro-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/myriadpro/MyriadPro-Semibold.woff") format("woff"), url("../fonts/myriadpro/MyriadPro-Semibold.ttf") format("truetype"), url("../fonts/myriadpro/MyriadPro-Semibold.svg#MyriadPro-Semibold") format("svg");
+}
+.myriad-b {
+  font-family: "MyriadPro-Bold";
+}
+.myriad-bc {
+  font-family: "MyriadPro-BoldCond";
+}
+.myriad-c {
+  font-family: "MyriadPro-Cond";
+}
+.myriad-it {
+  font-family: "MyriadPro-It";
+}
+.myriad-r {
+  font-family: "MyriadPro-Regular";
+}
+.myriad-sb {
+  font-family: "MyriadPro-Semibold";
+}
+/* --------- Mixins --------- */
+/* --------- Base --------- */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font: 100%/1.5em Arial, Helvetica, sans-serif;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+  background-color: #cccccc;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+h1 {
+  color: blue;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  background: #fff;
+}
+.container .cols {
+  float: left;
+  margin: 0 0 1em;
+  padding: 0 1em;
+  text-align: center;
+}
+.create {
+  height: 40px;
+  width: 140px;
+  background: #ccc;
+  border: 1px solid #777;
+  border-radius: 1px;
+  margin: 100px auto;
+}
+#slider-range-max {
+  width: 50%;
+  margin: 0 auto;
+}
+#slider-range-max1 {
+  width: 50%;
+  margin: 0 auto;
+}
+.container:before,
+.container:after,
+.row:after,
+.row:before,
+.clear:before,
+.clear:after {
+  content: " ";
+  display: table;
+}
+.container:after,
+.row:after,
+.clear:after {
+  clear: both;
+}
+.container .cols.col-1,
+.container .cols.col-2,
+.container .cols.col-3,
+.container .cols.col-4,
+.container .cols.col-5,
+.container .cols.col-6,
+.container .cols.col-7,
+.container .cols.col-8,
+.container .cols.col-9,
+.container .cols.col-10,
+.container .cols.col-11,
+.container .cols.col-12 {
+  width: 100%;
+}
+#amount,
+#amount1 {
+  border: 0;
+  color: #00000;
+  font-weight: bold;
+}
+.br {
+  text-align: center;
+}
+#bg-color {
+  width: 60px;
+}
+#border-color {
+  width: 60px;
+}
+@media only screen and (min-width: 685px) {
+  h1 {
+    color: #000;
+  }
+  .container .cols.col-1 {
+    width: 8.333333333333332%;
+  }
+  .container .cols.col-2 {
+    width: 16.666666667%;
+  }
+  .container .cols.col-3 {
+    width: 25%;
+  }
+  .container .cols.col-4 {
+    width: 33.333333333%;
+  }
+  .container .cols.col-5 {
+    width: 41.666666667%;
+  }
+  .container .cols.col-6 {
+    width: 50%;
+  }
+  .container .cols.col-7 {
+    width: 58.333333333%;
+  }
+  .container .cols.col-8 {
+    width: 66.666666667%;
+  }
+  .container .cols.col-9 {
+    width: 75%;
+  }
+  .container .cols.col-10 {
+    width: 83.333333333%;
+  }
+  .container .cols.col-11 {
+    width: 91,666666667%;
+  }
+  .container .cols.col-12 {
+    width: 100%;
+  }
+  body:after {
+    content: "больше или равно 321px";
+    background-color: red;
+  }
+}
