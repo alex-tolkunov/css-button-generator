@@ -52,7 +52,8 @@ $(function() {
 
 (function (){
       var create = $ ('.result-button'),
-      bgColorInput = $ ('#bg-color');
+      bgColorInput = $ ('#bg-color'),
+      brColorInput = $ ('#border-color');
      
 
 
@@ -62,7 +63,16 @@ $(function() {
             'background-color':  newColor 
           });
 
-          console.log(newColor)
+          
+      });
+
+      brColorInput.on('change' , function (){
+          var newColor = '#' + $(this).val();
+          create.css({
+            'border-color':  newColor 
+          });
+            
+          
       });
 
 
