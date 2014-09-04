@@ -113,10 +113,9 @@ textarea {
   width: 100%;
 }
 /* --------- input color --------- */
-#bg-color {
-  width: 60px;
-}
-#border-color {
+#bg-color,
+#border-color,
+#text-color {
   width: 60px;
 }
 /* --------- Button create --------- */
