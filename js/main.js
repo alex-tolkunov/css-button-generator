@@ -63,9 +63,10 @@ $(function() {
       brColorInput = $ ('#border-color'),
       btnText = $('.btn'),
       btnNewText = $('#button'),
-      btnColorText =$ ('#text-color');
+      btnColorText = $ ('#text-color'),
+      btnFont = $('#font');
       
-      //backgound-color
+      //изменение backgound-color у кнопки
 
       bgColorInput.on('change' , function (){
           var newColor = '#' + $(this).val();
@@ -74,7 +75,7 @@ $(function() {
           });
       });
 
-      //border-color
+      //изменение border-color у кнопки
 
       brColorInput.on('change' , function (){
           var newColor = '#' + $(this).val();
@@ -89,12 +90,20 @@ $(function() {
          btnNewText.text($(this).val());
       });
 
-      //button-text-color
+      //изменение text-color у текста кнопки
 
       btnColorText.on('change' , function (){
           var newColorText = '#' + $(this).val();
           create.css({
             'color':  newColorText 
+          });
+      });
+
+      //измение font-family у кнопки
+      btnFont.on('change' , function (){
+          var newFont = $(this).val();
+          create.css({
+            'font-family':  newFont
           });
       });
 
