@@ -2,7 +2,31 @@
 
 //Slider border-radius
 
-$(function() {
+
+
+   
+
+//Slider border-size
+
+
+
+/* ------------------------------------- */
+
+(function (){
+
+  //Переменные
+
+      var create = $ ('.result-button'),
+      bgColorInput = $ ('#bg-color'),
+      brColorInput = $ ('#border-color'),
+      btnText = $('.btn'),
+      btnNewText = $('#button'),
+      btnColorText = $ ('#text-color'),
+      btnFont = $('#font'),
+      cssCodeResultArea = $('#resultcss'),
+      htmlCodeResultArea = $('#resulthtml');
+      
+ $(function() {
     $( "#slider-border-radius" ).slider(
         {
             min: 0,
@@ -21,14 +45,12 @@ $(function() {
     function setInputsFromSlider (event, ui) {
         var val = $('#slider-border-radius').slider('value');
             style.borderRadius = val + 'px';
-            style.webkitBorderRadius = val + 'px';
-            style.mozBorderRadius = val + 'px';
+            
+         updateResult();  
     }
+
+
   });
-
-   
-
-//Slider border-size
 
 $(function() {
     $( "#slider-border-size" ).slider(
@@ -49,23 +71,10 @@ $(function() {
     function setInputsFromSlider (event, ui) {
         var val = $('#slider-border-size').slider('value');
             style.borderWidth = val + 'px';
+           updateResult();
     }
+    
 });
-
-/* ------------------------------------- */
-
-(function (){
-
-  //Переменные
-
-      var create = $ ('.result-button'),
-      bgColorInput = $ ('#bg-color'),
-      brColorInput = $ ('#border-color'),
-      btnText = $('.btn'),
-      btnNewText = $('#button'),
-      btnColorText = $ ('#text-color'),
-      btnFont = $('#font');
-      
       //изменение backgound-color у кнопки
 
       bgColorInput.on('change' , function (){
@@ -73,6 +82,7 @@ $(function() {
           create.css({
             'background-color':  newColor 
           });
+      updateResult();
       });
 
       //изменение border-color у кнопки
@@ -82,12 +92,14 @@ $(function() {
           create.css({
             'border-color':  newColor 
           });
+          updateResult();
       });
 
       //button-text
 
       btnText.on('keyup' , function(){
          btnNewText.text($(this).val());
+         htmlArea();
       });
 
       //изменение text-color у текста кнопки
@@ -97,6 +109,7 @@ $(function() {
           create.css({
             'color':  newColorText 
           });
+          updateResult();
       });
 
       //измение font-family у кнопки
@@ -105,7 +118,48 @@ $(function() {
           create.css({
             'font-family':  newFont
           });
+          updateResult();
       });
+
+     var updateResult = function() {
+
+      var borderRad = create.css('border-radius'),
+          borderSize = create.css('border-width'),
+          fontFamily = create.css('font-family'),
+          bgcolor = create.css('background-color'),
+          brcolor = create.css('border-color'),
+          textcolor = create.css('color');
+
+
+
+      cssCodeResultArea.text(
+
+          '.button {\n' +
+            'font-family:'           + fontFamily + ';\n' +
+            'background-color:'      + bgcolor + ';\n' +
+            'border-color:'          + brcolor + ';\n' +
+            'color:'                 + textcolor + ';\n' +
+            '-webkit-border-radius:' + borderRad + ';\n' +
+            '-moz-border-radius:'    + borderRad + ';\n' +
+            'border-radius:'         + borderRad + ';\n' +
+            'border-width:'          + borderSize + ';\n' +
+            '};'
+        );
+
+     }
+      
+    updateResult();
+
+    var htmlArea = function(){
+
+      var text = $('.btn').val();
+
+      htmlCodeResultArea.text(
+          '<button class="create-button"> ' + text + ' </button>\n'
+        );
+    }
+
+    htmlArea();
 
 }());
 
