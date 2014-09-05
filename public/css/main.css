@@ -121,13 +121,15 @@ textarea {
 /* --------- Button create --------- */
 .result-button {
   margin: 100px auto;
-  height: 40px;
-  width: 140px;
-  border: 0px solid #000;
+ border: 0px solid #000;
 }
+
+
 /* --------- UI slider --------- */
 #slider-border-radius,
-#slider-border-size {
+#slider-border-size,
+#slider-width,
+#slider-height {
   width: 50%;
   margin: 0 auto;
 }
