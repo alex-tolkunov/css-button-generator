@@ -8,25 +8,23 @@
             this.setUpPluginsTwo();
             this.setUpPluginsThree();
             this.setUpPluginsFour();
+            this.setUpPluginsFive();
             this.htmlArea();
 
         },
         setUpListeners: function () {
-          //Slider(Ползунки)
+          //Slider(Ползунки) border-radius and border-size
           $ ('#slider-border-radius').on('slidechange',$.proxy(this.borderRadChange, this));
           $ ('#slider-border-size').on('slidechange',$.proxy(this.borderSizeChange, this));
           //Color
           $ ('#bg-color').on('change',$.proxy(this.BgColor, this));
           $ ('#border-color').on('change',$.proxy(this.BrColor, this));
-          //Text
+          //Font/Text
           $ ('#btn-text').on('keyup',$.proxy(this.BtnText, this));
           $ ('#text-color').on('change',$.proxy(this.BtnColorText, this));
-          $ ('#font').on('change',$.proxy(this.BtnFontText, this)); 
-
-          $ ('#posx').on('change',$.proxy(this.PosX, this));
-          $ ('#posy').on('change',$.proxy(this.PosY, this));
-          $ ('#shadow-color').on('change',$.proxy(this.shadowColor, this));
-
+          $ ('#font').on('change',$.proxy(this.BtnFontText, this));
+          $ ('#slider-font-size').on('slidechange',$.proxy(this.FontSize, this)); 
+          //HorSize and VerSize
           $ ('#slider-width').on('slidechange',$.proxy(this.SliderWidth, this));
           $ ('#slider-height').on('slidechange',$.proxy(this.SliderHeiht, this));
         },
@@ -34,13 +32,12 @@
         //Кнопка
         create : $ ('.result-button'),
         
-        
         //Slider UI border-radius
         setUpPlugins:function() {
             $( "#slider-border-radius" ).slider(
               {
               range: 'min',
-              max: 20,
+              max: 25,
               min: 0,
               });
         },
@@ -109,7 +106,7 @@
             this.updateResult();
         },
 
-        //Изменение backgrouns-color
+        //Изменение backgrounds-color
         BgColor: function() {
             var newColor = '#' + $('#bg-color').val();
             this.create.css({
@@ -142,13 +139,34 @@
             this.updateResult();
         },
 
-        //Изменение шрифта кнопки
+        //Изменение Font-family кнопки
         BtnFontText: function () {
             var newFont = $('#font').val();
             this.create.css({
                 'font-family':  newFont
             });
             this.updateResult(); 
+        },
+
+        //Slider UI Font-size        
+        setUpPluginsFive:function() {
+            $( '#slider-font-size' ).slider(
+              {
+              range: 'min',
+              max: 46,
+              min: 12,
+              slide: function( event, ui ) {
+              $( "#amount" ).val( ui.value + ' px' );
+            }
+              });
+            $( "#amount" ).val( $( '#slider-font-size' ).slider( "value" ) + ' px' );
+        },
+
+        FontSize:function (e,ui) {
+            this.create.css({
+                'font-size' : ui.value,
+            });
+            this.updateResult();
         },
 
         //Динамическое изменение css textarea 
@@ -160,6 +178,7 @@
                 brcolor = this.create.css('border-color'),
                 textcolor = this.create.css('color'),
                 Pad = this.create.css('padding-top') + ' ' + this.create.css('padding-left'),
+                FontSize = this.create.css('font-size');
                 
                 
                 cssCodeResultArea = $('#resultcss');
@@ -167,6 +186,7 @@
           cssCodeResultArea.text(
             '.button {\n' +
             'font-family:'           + fontFamily + ';\n' +
+            'font-size:'             + FontSize + ';\n' +
             'padding:'               + Pad + ';\n' +
             'background-color:'      + bgcolor + ';\n' +
             'border:'                + borderSize +  ' solid '  + brcolor + ';\n' +
@@ -190,8 +210,6 @@
                 '<button class="create-button"> ' + text + ' </button>\n'
             );
         }
-
-
     }
 
     app.initialize();
