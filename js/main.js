@@ -32,7 +32,7 @@
 
         //Кнопка
         create : $ ('.result-button'),
-        //input_email: $('#inputEmail'),
+        
         
         //Slider UI border-radius
         setUpPlugins: function() {
@@ -87,99 +87,6 @@
 
             },
 
-        submitForm : function(a) {
-            a.preventDefault();
-              
-            var form = $(this);
-                submitBtn = form.find('button[type="submit"]');
-
-            if(app.validateForm(form) === false ) return false;
-
-            submitBtn.attr('disabled', 'disabled');
-
-            var str = form.serialize();
-                
-
-                
-               
-            
-            $.ajax ({
-              url : 'send.php',
-              type: 'POST',
-              data: str
-
-                  
-                    
-
-                    
-
-            })
-            .done(function(msg) {
-                if(msg === "OK"){
-                    //var result = "<div = 'bg-success'>Код твоей кнопки выслан на почту!</div>";
-                    //var obj = $('#msg').show();
-                    var msg ='<div class="bg-success">Код отправлен!</div>';
-                    //$('#msg').addClass('ok').removeClass('error');
-                    //$('#inputEmail').addClass('ok').removeClass('error');
-                    $('#msg').find('.msg_text').html(msg);
-                    //$('#inputEmail').val('');
-
-                }else{
-                    //form.html(msg);
-                    var msg = '<div class="bg-danger">Неправильный email</div>';
-                    //$('#msg').addClass('error').removeClass('ok');
-                    //$('#inputEmail').addClass('error').removeClass('ok');
-                    $('#msg').find('.msg_text').html(msg);
-                
-                }
-            })
-            .always(function() {
-                submitBtn.removeAttr('disabled');
-            });
-            
-            
-            
-        },
-
-        validateForm: function (form) {
-            var inputs = form.find('input'),
-            valid = true;
-
-            inputs.tooltip('destroy');
-
-            $.each(inputs, function(index, val) {
-            var input = $(val),
-                val = input.val(),
-                formGroup = input.parents('.form-group'),
-                label = formGroup.find('label').text().toLowerCase(),
-                textError = 'Введите ' + label;
-
-            if(val.length === 0) {
-                formGroup.addClass('has-error').removeClass('has-success');
-                input.tooltip({
-                    trigger: 'manual',
-                    placement: 'right',
-                    title: textError
-                }).tooltip('show');
-                valid = false;
-            }else{
-                formGroup.addClass('has-success').removeClass('has-error');
-              } 
-              
-              });
-             return valid;
-         },  
-
-         removeError: function() {
-            $(this).tooltip('destroy').parents('.form-group').removeClass('has-error');
-         },
-
-         
-            
-           
-            
-
-           
 
         //Изменение border-radius
         borderRadChange:function (e,ui) {
@@ -279,7 +186,6 @@
                 cssCodeResultArea = $('#resultcss');
 
 
-
                   if ( BrSizeSlider > 0) {
                       cssCodeResultArea.text(
                           '.create-button {\n' +
@@ -295,8 +201,6 @@
                       );
                     }
 
-                   
-
                   else {
                       cssCodeResultArea.text(
                           '.create-button {\n' +
@@ -310,21 +214,11 @@
                           '};'
                           );
                       };
-
-                   
-                    
-
-
-                      
-
-        
-
-
         },
 
         
         //Динамическое изменение html textarea 
-       updateHtmlArea: function(){
+        updateHtmlArea: function(){
             var htmlCodeResultArea = $('#resulthtml');
                 
                 
@@ -332,7 +226,84 @@
             htmlCodeResultArea.text(
                 '<button class="create-button">'+ $('#btn-text').val() +'</button>'
             );
-        }
+        },
+
+        //Валидация
+        submitForm : function(a) {
+            a.preventDefault();
+              
+            var form = $(this);
+                submitBtn = form.find('button[type="submit"]');
+
+            if(app.validateForm(form) === false ) return false;
+
+            submitBtn.attr('disabled', 'disabled');
+
+            var str = form.serialize();
+                
+              $.ajax ({
+              url : 'send.php',
+              type: 'POST',
+              data: str
+            })
+            .done(function(msg) {
+                if(msg === "OK"){
+                    //var result = "<div = 'bg-success'>Код твоей кнопки выслан на почту!</div>";
+                    //var obj = $('#msg').show();
+                    var msg ='<div class="bg-success">Код отправлен!</div>';
+                    //$('#msg').addClass('ok').removeClass('error');
+                    //$('#inputEmail').addClass('ok').removeClass('error');
+                    $('#msg').find('.msg_text').html(msg);
+                    //$('#inputEmail').val('');
+
+                }else{
+                    //form.html(msg);
+                    var msg = '<div class="bg-danger">Неправильный email</div>';
+                    //$('#msg').addClass('error').removeClass('ok');
+                    //$('#inputEmail').addClass('error').removeClass('ok');
+                    $('#msg').find('.msg_text').html(msg);
+                }
+            })
+            .always(function() {
+                submitBtn.removeAttr('disabled');
+            });
+            
+            
+            
+        },
+
+        validateForm: function (form) {
+            var inputs = form.find('input'),
+            valid = true;
+
+            inputs.tooltip('destroy');
+
+            $.each(inputs, function(index, val) {
+            var input = $(val),
+                val = input.val(),
+                formGroup = input.parents('.form-group'),
+                label = formGroup.find('label').text().toLowerCase(),
+                textError = 'Введите ' + label;
+
+            if(val.length === 0) {
+                formGroup.addClass('has-error').removeClass('has-success');
+                input.tooltip({
+                    trigger: 'manual',
+                    placement: 'right',
+                    title: textError
+                }).tooltip('show');
+                valid = false;
+            }else{
+                formGroup.addClass('has-success').removeClass('has-error');
+              } 
+              
+              });
+             return valid;
+         },  
+
+         removeError: function() {
+            $(this).tooltip('destroy').parents('.form-group').removeClass('has-error');
+         },
     }
 
     app.initialize();
