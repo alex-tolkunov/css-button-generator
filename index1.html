@@ -14,7 +14,6 @@
         
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="public/css/main.css">
-        <link href="themes/prism.css" rel="stylesheet" />
             <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -42,20 +41,20 @@
                 <div class="option">
                     <h3 class="text-center">Options</h3>
                     <div class="border-radius-slider">
-                        <p class="text-center">Border-radius</p>
+                        <p class="text-center">Border-radius:</p>
                         <div id="slider-border-radius"></div>
                     </div>
                     <div class="border-size-slider">
-                        <p class="text-center">Border-size</p>
+                        <p class="text-center">Border-size:</p>
                         <div id="slider-border-size"></div>
                     </div>
                     <div class="height">
-                        <p class="text-center">Height</p>
+                        <p class="text-center">Height:</p>
                         <div id="slider-height"></div>
                     </div>
                 
                     <div class="width">
-                        <p class="text-center">Width</p>
+                        <p class="text-center">Width:</p>
                         <div id="slider-width"></div>
                     </div>
                     
@@ -88,7 +87,7 @@
                                 <div class="input-group">
                                     
                                         <span class="input-group-addon">Button Text</span>
-                                        <input type="text" class="form-control" id="btn-text" placeholder="Button Text" value="Button Text">
+                                        <input type="text" class="form-control" id="btn-text" placeholder="Button Text">
                                     
                                 </div>
                             </div>
@@ -100,8 +99,12 @@
                                     
                                 </div>
                             </div>
+                            <div class="slider-font-size">
+                                <p class="text-center">Font-size:</p>
+                                <div id="slider-font-size"></div>
+                            </div>
                             <div class="btn-font">
-                                <div class="input-group">
+                                <div class="col-md-4">
                                     <span class="input-group-addon">Font-family</span>
                                     <select class="form-control" id="font">
                                         <option id="font" value="Tahoma">Tahoma</option>
@@ -111,11 +114,6 @@
                                     </select> 
                                 </div>
                             </div>
-                            <div class="slider-font-size">
-                                <p class="text-center">Font-size</p>
-                                <div id="slider-font-size"></div>
-                            </div>
-                     
                     </div>
                 
                 </div>
@@ -123,29 +121,23 @@
                 <div class="col-md-6">
                     <div class="result">
                          <h3 class="text-center">Result</h3>
-                         <button  id="button" class="result-button text-center">Button-text</button>
-                    </div>
+                         <button  id="button" class="result-button">Border-text</button>
+                     </div>
                 </div>
         </div>
         <div class="row">
-            
             <form role="form" method="POST" action="send.php">
                 <div class="col-md-6">
-                    <textarea class="form-control" name="htmlcode" rows="3"  id="resulthtml" ></textarea>
+                    <textarea class="form-control" rows="3" name="html" id="resulthtml"></textarea>
                 </div>
                 <div class="col-md-6">
-                    <textarea class="form-control" name="csscode" rows="10"  id="resultcss"></textarea>
+                    <textarea class="form-control" rows="10" name="css" id="resultcss" disabled=""></textarea>
                 </div>
-                
                 <div class="col-md-12">
-                               
                     <div class="form-horizontal" >
                         <div class="form-group">
-                             <div id="msg">
-                <div class="msg_text"></div>
-            </div>
                             <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-                            <div class="col-md-8 col-lg-4 col-xs-6">
+                            <div class="col-md-3">
                                 <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
                             </div>
                         </div>
@@ -157,7 +149,7 @@
                     </div>
                 </div>
             </form>
-        </div>
+</div>
         
 
         
@@ -176,8 +168,7 @@
         <link rel="stylesheet" href="css/jquery-ui.css">
         <script src="js/vendor/jquery-1.11.0.min.js"></script>
         <script src="js/vendor/jquery-ui.js"></script>
-        <script src="js/jquery.ui.touch-punch.min.js"></script>
-        <script src="js/prism.js"></script>
+
         <script type="text/javascript" src="js/jscolor/jscolor.js"></script>       
         <script src="js/main.js"></script> 
                

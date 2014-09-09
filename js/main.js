@@ -32,7 +32,7 @@
 
         //Кнопка
         create : $ ('.result-button'),
-        input_email: $('#inputEmail'),
+        //input_email: $('#inputEmail'),
         
         //Slider UI border-radius
         setUpPlugins: function() {
@@ -98,29 +98,36 @@
             submitBtn.attr('disabled', 'disabled');
 
             var str = form.serialize();
+                
+
+                
                
             
             $.ajax ({
               url : 'send.php',
               type: 'POST',
-              data: str,
+              data: str
+
+                  
+                    
+
                     
 
             })
             .done(function(msg) {
                 if(msg === "OK"){
                     //var result = "<div = 'bg-success'>Код твоей кнопки выслан на почту!</div>";
-                    var obj = $('#msg').show();
-                    var msg ='<div class="bg-success">Чекай почту!Код твоей кнопки уже там!=)</div>';
-                    $('#msg').addClass('ok').removeClass('error');
+                    //var obj = $('#msg').show();
+                    var msg ='<div class="bg-success">Код отправлен!</div>';
+                    //$('#msg').addClass('ok').removeClass('error');
                     //$('#inputEmail').addClass('ok').removeClass('error');
                     $('#msg').find('.msg_text').html(msg);
-                    $('#inputEmail').val('');
+                    //$('#inputEmail').val('');
 
                 }else{
                     //form.html(msg);
                     var msg = '<div class="bg-danger">Неправильный email</div>';
-                    $('#msg').addClass('error').removeClass('ok');
+                    //$('#msg').addClass('error').removeClass('ok');
                     //$('#inputEmail').addClass('error').removeClass('ok');
                     $('#msg').find('.msg_text').html(msg);
                 
@@ -276,14 +283,14 @@
                   if ( BrSizeSlider > 0) {
                       cssCodeResultArea.text(
                           '.create-button {\n' +
-                          'font'                  + ': ' + Font + ';\n' +
-                          'padding'               + ': ' + Pad + ';\n' +
-                          'background-color'      + ': ' + bgcolor + ';\n' +
-                          'border'                + ': ' + borderSize  +  ' solid '  + brcolor + ';\n' +
-                          'color'                 + ': ' + textcolor + ';\n' +
-                          '-webkit-border-radius' + ': ' + borderRad + ';\n' +
-                          '-moz-border-radius'    + ': ' + borderRad + ';\n' +
-                          'border-radius'         + ': ' + borderRad + ';\n' +
+                          'font: '                  + Font + ';\n' +
+                          'padding: '               + Pad + ';\n' +
+                          'background-color: '      + bgcolor + ';\n' +
+                          'border: '                + borderSize  +  ' solid '  + brcolor + ';\n' +
+                          'color: '                 + textcolor + ';\n' +
+                          '-webkit-border-radius: ' + borderRad + ';\n' +
+                          '-moz-border-radius: '    + borderRad + ';\n' +
+                          'border-radius: '         + borderRad + ';\n' +
                           '};'
                       );
                     }
@@ -315,13 +322,15 @@
 
         },
 
+        
         //Динамическое изменение html textarea 
-        updateHtmlArea: function(){
-            var htmlCodeResultArea = $('#resulthtml'),
-                text = $('#btn-text').val();
+       updateHtmlArea: function(){
+            var htmlCodeResultArea = $('#resulthtml');
+                
+                
 
             htmlCodeResultArea.text(
-                '<button class="create-button"> ' + text + ' </button>\n'
+                '<button class="create-button">'+ $('#btn-text').val() +'</button>'
             );
         }
     }

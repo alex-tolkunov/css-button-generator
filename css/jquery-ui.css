@@ -657,6 +657,7 @@ button.ui-button::-moz-focus-inner {
 .ui-slider {
 	position: relative;
 	
+	
 }
 .ui-slider .ui-slider-handle {
 	position: absolute;
@@ -850,20 +851,20 @@ body .ui-tooltip {
 	font-size: 1em;
 }
 .ui-widget-content {
-	border: 1px solid #dddddd;
+	/*border: 1px solid #dddddd;
 /*	background: #eeeeee url("../img/jqui/images/ui-bg_highlight-soft_100_eeeeee_1x100.png") 50% top repeat-x;*/
     /*изменен фон слайдера справа */
-    background: #308ecf;
+    background: #EBEDEF;
 	color: #333333;
 }
 .ui-widget-content a {
 	color: #333333;
 }
 .ui-widget-header {
-		border: 1px solid #e78f08;
+		/*border: 1px solid #e78f08;
 	/*background: #f6a828 url("../img/jqui/images/ui-bg_gloss-wave_35_f6a828_500x100.png") 50% 50% repeat-x;*/
     /* изменен фон слайдера слева */
-    background: #828282 50% 50% repeat-x;
+    background: #1ABC9C;
 	color: #ffffff;
 	font-weight: bold;
 }
@@ -880,7 +881,7 @@ body .ui-tooltip {
 /*	background: #000000 *//*#f6f6f6 url("../img/jqui/images/ui-bg_glass_100_f6f6f6_1x400.png")*//* 50% 50% repeat-x;*/
     /*  изменена ручка ползунка*/
 	border: none;
-    background: /*#ffffff*/ url("img/jqui/handle.png") round;
+    background: #48C9B0;
     font-weight: bold;
 	color: #1c94c4;
 }
@@ -900,7 +901,7 @@ body .ui-tooltip {
 	background: #000000 *//*#fdf5ce url("../img/jqui/images/ui-bg_glass_100_fdf5ce_1x400.png")*//* 50% 50% repeat-x;*/
     /*  изменена ручка ползунка*/
 	border: none;
-    background: /*#ffffff*/ url("img/jqui/handle.png") round;
+    background: #16A085;
     font-weight: bold;
 	color: #c77405;
 }
@@ -922,7 +923,7 @@ body .ui-tooltip {
 	background: #000000 *//*#ffffff*//* *//*url("../img/jqui/images/ui-bg_glass_65_ffffff_1x400.png")*//* 50% 50% repeat-x;*/
     /*изменена ручка ползунка*/
 	border: none;
-    background: /*#ffffff*/ url("img/jqui/handle.png") round;
+    background: #16A085;
 	font-weight: bold;
 	color: #eb8f00;
 }
