@@ -222,9 +222,6 @@ textarea.form-control {
   .control-label {
     display: none;
   }
-  .option {
-    border-right: none;
-  }
   textarea.form-control {
     height: auto;
     margin-bottom: 20px;
