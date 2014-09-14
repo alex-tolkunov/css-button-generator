@@ -1,0 +1,350 @@
+/* --------- Mixins --------- */
+
+  @import "mixins";
+  
+/* --------- Color --------- */ 
+
+@primary-color : #1ABC9C;
+
+/* --------- Base --------- */
+
+* {
+   -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+body {
+    font: 100%/1.5em Arial;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    background-color: #48C9B0;
+}
+ 
+
+/* --------- Main.css --------- */
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  width: 50%;
+  margin: 10px auto;
+}
+
+textarea {
+    resize: none;
+    outline: none;
+}
+
+
+
+/* --------- Статический Код создаваемой кнопки --------- */
+
+.result-button {
+  margin: 100px auto;
+  display: block;
+  border: 0px solid #000;
+  background-color: @primary-color;
+  padding: 15px 30px;
+}
+
+/* --------Ползунки---------- */
+
+#slider-border-radius,
+#slider-border-size,
+#slider-height,
+#slider-width,
+#slider-font-size {
+    width: 50%;
+    margin: 0 auto;
+}
+
+p {
+padding-top: 20px ;
+}
+
+textarea.form-control {
+height: auto;
+border-radius: 20px;
+}
+
+.option {
+  border-right: 1px solid @primary-color;
+}
+
+.row {
+    margin-bottom: 40px;
+}
+
+#inputEmail {
+    width: 20%;
+    margin: 0 auto;
+}
+
+#submit {
+display: block;
+   margin: 0 auto;
+}
+
+footer p {
+    color: @primary-color;
+}
+
+/* --------Код блока при успешной отправке---------- */
+.bg-success{
+    text-align: center;
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+/* --------Код блока при неудачной отправке---------- */
+.bg-danger{
+    text-align: center;
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+/* -------Media---------- */
+
+@media screen and (max-width: 320px) {
+  
+    .wrapper {
+      width: 100%;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    #slider-border-radius,
+    #slider-border-size,
+    #slider-height,
+    #slider-width,
+    #slider-font-size {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .input-group {
+      width: 90%;
+      margin: 10px auto;
+    }
+
+    .option {
+      border-right: none;
+    }
+
+    .row {
+      margin-bottom: 0;
+    }
+
+    textarea.form-control {
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .result-button {
+      margin: 10px auto;
+      display: block;
+      border: 0px solid #000;
+      background-color: #1abc9c;
+      padding: 15px 30px;
+    }
+
+    #inputEmail {
+      width: 60%;
+      margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+  
+    .result-button {
+    margin: 10px auto;
+    display: block;
+    border: 0px solid #000;
+    background-color: #1abc9c;
+    padding: 15px 30px;
+    }
+
+    #slider-border-radius,
+    #slider-border-size,
+    #slider-height,
+    #slider-width,
+    #slider-font-size {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .input-group {
+      width: 90%;
+      margin: 10px auto;
+    }
+
+    .option {
+      border-right: none;
+    }
+
+    textarea.form-control {
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    #inputEmail {
+      width: 60%;
+      margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .result-button {
+      margin: 10px auto;
+      display: block;
+      border: 0px solid #000;
+      background-color: #1abc9c;
+      padding: 15px 30px;
+    }
+
+    #slider-border-radius,
+    #slider-border-size,
+    #slider-height,
+    #slider-width,
+    #slider-font-size {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .input-group {
+      width: 90%;
+      margin: 10px auto;
+    }
+
+    .option {
+      border-right: none;
+    }
+
+    textarea.form-control {
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    #inputEmail {
+      width: 70%;
+      margin: 0 auto;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .result-button {
+      margin: 10px auto;
+      display: block;
+      border: 0px solid #000;
+      background-color: #1abc9c;
+      padding: 15px 30px;
+    }
+
+    #slider-border-radius,
+    #slider-border-size,
+    #slider-height,
+    #slider-width,
+    #slider-font-size {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .input-group {
+      width: 90%;
+      margin: 10px auto;
+    }
+
+    .option {
+      border-right: none;
+    }
+
+    textarea.form-control {
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    #inputEmail {
+      width: 70%;
+      margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 966px) {
+    .result-button {
+      margin: 10px auto;
+      display: block;
+      border: 0px solid #000;
+      background-color: #1abc9c;
+      padding: 15px 30px;
+    }
+
+    #slider-border-radius,
+    #slider-border-size,
+    #slider-height,
+    #slider-width,
+    #slider-font-size {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .input-group {
+      width: 80%;
+      margin: 10px auto;
+    }
+
+    .option {
+      border-right: none;
+    }
+
+    textarea.form-control {
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    #inputEmail {
+      width: 50%;
+      margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+  
+    textarea.form-control {
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    #inputEmail {
+      width: 20%;
+      margin: 0 auto;
+    }
+
+ 
+}
+
+
+
+
+
+
+
